@@ -1,51 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "function.h"
 
-char * extract_grid(int id_map) // selection de la map à l'aide d'un scanf dans main précédent l'appel de la fonction
+/*char * extract_grid(FILE * fp) // selection de la map à l'aide d'un scanf dans main précédent l'appel de la fonction
 {
-    // ouverture de mon fichier map.txt
-    FILE *fp = NULL; // déclaration en dehors des if
-
-    if(id_map == 1)
-    {
-        FILE *fp = fopen("map1.txt", "r");
-
-        if (fp == NULL)
-        {
-            printf("Le fichier map1.txt n'a pas pu être ouvert\n");
-            return EXIT_FAILURE;
-        }
-    }
-
-    else if(id_map == 2)
-    {
-        FILE *fp = fopen("map2.txt", "r");
-
-        if (fp == NULL)
-        {
-            printf("Le fichier map2.txt n'a pas pu être ouvert\n");
-            return EXIT_FAILURE;
-        }
-    }
-
-    else if(id_map == 3)
-    {
-        FILE *fp = fopen("map3.txt", "r");
-
-        if (fp == NULL)
-        {
-            printf("Le fichier map3.txt n'a pas pu être ouvert\n");
-            return EXIT_FAILURE;
-        }
-    }
-
-    else
-    {
-        printf("Le numéro de map que vous avez choisi n'existe pas.\n");
-        exit(0);
-    }
-
+ 
     // récupération des données du map.txt
     char * content;
     char buffer[10];
@@ -60,4 +20,32 @@ char * extract_grid(int id_map) // selection de la map à l'aide d'un scanf dans
     }
     fclose(fp);
     return content;
+}*/
+
+void construct_grid(char **grille)
+{
+    int i = 0;
+    int j = 0;
+
+    while (grille[i] != NULL)
+    {
+        grille[i] = "        ";
+        i++;
+    }
 }
+
+
+
+void print_grid(char**grille)
+{
+    int i = 0;
+
+    printf("##########\n");
+    while (i < 8)
+    {
+        printf("#%c%c%c%c%c%c%c%c#\n", grille[i][0], grille[i][1], grille[i][2], grille[i][3], grille[i][4], grille[i][5], grille[i][6], grille[i][7]);
+        i++;
+    }
+    printf("##########\n");
+}
+

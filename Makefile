@@ -1,6 +1,9 @@
 NAME = sokoban
 
-SRCS = main.c  
+SRCS = main.c \
+	grille.c \
+	box.c \
+	player.c
 
 all : $(NAME)
 

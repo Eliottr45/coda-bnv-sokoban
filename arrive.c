@@ -3,7 +3,7 @@
 #include <time.h>
 #include "function.h"
 
-void start_position_player(char ** grille, position * pos)
+void pos_arrive(char ** grille, position * pos)
 {
     srand(time(NULL));
     int used = 0; 
@@ -16,7 +16,5 @@ void start_position_player(char ** grille, position * pos)
             used = 1;
         }
     }
-    grille[pos->x][pos->y] = 'o';
-    exit(0);
+    grille[pos->x][pos->y] = '.';
 }
-        
