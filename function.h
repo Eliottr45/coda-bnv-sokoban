@@ -16,7 +16,9 @@ char * extract_grid(FILE * fp);
 void construct_grid(char **grille);
 void print_grid(char**grille);
 void start_position_player(char ** grille, position * pos);
-void pos_arrive(char ** grille, position * pos);
+void position_arr(char ** grille, position * pos);
 void start_position_box(char ** grille, position * pos);
+void déplacement(char ** grille, position * pos, position * box);
+int win(position * box, position * end);
 
 #endif

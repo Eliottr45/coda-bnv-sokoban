@@ -7,21 +7,28 @@
 
 void start_position_box(char ** grille, position * pos)
 {
-    srand(time(NULL));
     int used = 0; 
     while( used == 0)
     {
-        pos->x = rand() % 7;
-        pos->y = rand() % 7;
+        pos->x = rand() % 8;
+        pos->y = rand() % 8;
         if(grille[pos->x][pos->y] == ' ')
         {
             used = 1;
         }
-        if(grille[pos->x][pos->y + 1] == '#')
+        if(pos->y + 1 > 7)
         {
             used = 0;
         }
-        else if(grille[pos->x + 1][pos->y] == '#')
+        else if(pos->y - 1 < 0)
+        {
+            used = 0;
+        }
+        else if(pos->x + 1 > 7)
+        {
+            used = 0;
+        }
+        else if(pos->x - 1 < 0)
         {
             used = 0;
         }
@@ -29,7 +36,5 @@ void start_position_box(char ** grille, position * pos)
     grille[pos->x][pos->y] = 'X';
 }
 
-void move(char ** grille, position * joueur)
-{
-    
-}
+
+

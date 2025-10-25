@@ -3,7 +3,8 @@ NAME = sokoban
 SRCS = main.c \
 	grille.c \
 	box.c \
-	player.c
+	player.c \
+	arrive.c
 
 all : $(NAME)
 

@@ -3,6 +3,7 @@
 #include <string.h>
 #include "function.h"
 
+
 /*char * extract_grid(FILE * fp) // selection de la map à l'aide d'un scanf dans main précédent l'appel de la fonction
 {
  
@@ -29,7 +30,13 @@ void construct_grid(char **grille)
 
     while (grille[i] != NULL)
     {
-        grille[i] = "        ";
+        while(j < 8)
+        {
+        grille[i][j] = ' ';
+        j++;
+        }
+        grille[i][8] = '\0';
+        j = 0;
         i++;
     }
 }
