@@ -132,7 +132,7 @@ void déplacement(char ** grille, position * pos, position * box)
         }
         else if(pos->x == box->x && pos->y + 1 == box->y)
         {
-            if (box->x + 1 > 8 || grille[box->x][box->y + 1] != ' ' && grille[box->x][box->y + 1] != '.')
+            if (box->y + 1 > 8 || grille[box->x][box->y + 1] != ' ' && grille[box->x][box->y + 1] != '.')
             {
                 printf("Impossible de pousser la box.\n");
             }

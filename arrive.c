@@ -41,7 +41,7 @@ int win(position * box, position * end)
     {
         win = 2;
     }
-    else if((box->x == 0 && box->y == 0) || (box->x == 0 && box->y == 7) || (box->x == 7 && box->y == 0) || (box->x == 7 && box->y == 7))
+    else if((box->x == 1 && box->y == 1) || (box->x == 1 && box->y == 8) || (box->x == 8 && box->y == 1) || (box->x == 8 && box->y == 8))
     {
         win = 2;
     }
